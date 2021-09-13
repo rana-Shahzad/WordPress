@@ -14,7 +14,7 @@
 if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 	require_once(dirname(__FILE__) . '/wp-config-pantheon.php');
 
-/**
+
  * Local configuration information.
  *
  * If you are working in a local/desktop development environment and want to
@@ -30,7 +30,7 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * wp-config-local.php. Insert alternate config here if necessary.
  *
  * If you are only running on Pantheon, you can ignore this block.
- */
+
 } else {
 	define('DB_NAME',          'database_name');
 	define('DB_USER',          'database_username');
@@ -48,6 +48,8 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
 	define('NONCE_SALT',       'put your unique phrase here');
 }
 
+define( 'WP_MEMORY_LIMIT', '256M' );
+define( 'WP_MAX_MEMORY_LIMIT', '512M' );
 
 /** Standard wp-config.php stuff from here on down. **/
 
